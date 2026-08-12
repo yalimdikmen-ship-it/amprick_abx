@@ -1,0 +1,16 @@
+{
+  "name": "YBÜ Antibiyotik Karar ve Doz Destek Sistemi",
+  "short_name": "YBÜ Antibiyotik",
+  "description": "Ampirik tedavi, renal doz, obezite ve CRRT karar desteği",
+  "lang": "tr",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#eef3f8",
+  "theme_color": "#0b2347",
+  "icons": [
+    {"src":"./icons/icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
