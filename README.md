@@ -1,4 +1,11 @@
-# YBÜ Antibiyotik Karar ve Doz Destek Sistemi
+# YBÜ Antibiyotik Karar ve Doz Destek Sistemi v2.0
+
+## v2.0 yenilikleri
+
+- Hastanede yatarken gelişen sepsis için son 7 gündeki antibiyotik tedavisine göre dört dallı karar algoritması eklendi.
+- Ünite florasının belirleyici olduğu uyarısı görünür hale getirildi.
+- Cerrahpaşa Candida skoru girişi ve skor ≥4 olduğunda ekinokandin düşünülmesi desteği eklendi.
+- Kolistin, Sulperazon, Fosfomisin, Tigesiklin ve Ekinokandin seçeneklerinin doz modülüne aktarımı eklendi.
 
 GitHub Pages üzerinde çalışan, iPhone/iPad ana ekranına kurulabilen çevrimdışı PWA paketidir.
 
