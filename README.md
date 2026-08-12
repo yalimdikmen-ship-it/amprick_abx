@@ -1,4 +1,11 @@
-# YBÜ Antibiyotik Karar ve Doz Destek Sistemi v2.0
+# YBÜ Antibiyotik Karar ve Doz Destek Sistemi v2.1
+
+## v2.1 düzeltmesi
+
+- Kolistin, sefoperazon–sulbaktam, IV fosfomisin, tigesiklin ve ekinokandinler için somut yükleme/idame dozları eklendi.
+- CrCl, HD ve CRRT'ye göre ilgili doz dalları eklendi.
+- Kolistin CBA–milyon IU dönüşümü ve birim güvenliği uyarısı eklendi.
+- Tigesiklin için Child–Pugh C ayarı, yüksek doz seçeneği ve HAP/VAP–bakteriyemi–üriner odak uyarıları eklendi.
 
 ## v2.0 yenilikleri
 
@@ -32,3 +39,13 @@ Dosyaları GitHub'da değiştirdikten sonra Safari eski sürümü gösterirse uy
 ## Klinik güvenlik
 
 Bu araç reçete veya order oluşturmaz; klinik kararın yerine geçmez. Lokal direnç verileri, güncel ürün bilgileri, böbrek fonksiyonunun seyri, TDM olanakları ve hasta özellikleri sorumlu hekim tarafından ayrıca değerlendirilmelidir.
+
+## Başlıca doz kaynakları
+
+- Coly-Mycin M (kolistimetat sodyum) FDA ürün bilgisi: https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/050108s041lbl.pdf
+- Uluslararası polimiksin konsensüsü: https://pmc.ncbi.nlm.nih.gov/articles/PMC7437259/
+- Sulperazon Pfizer ürün bilgisi: https://labeling.pfizer.com/ShowLabeling.aspx?id=14308
+- IVOZFO IV fosfomisin ürün monografı: https://pdf.hres.ca/dpd_pm/00067823.PDF
+- Tygacil FDA ürün bilgisi: https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/021821s056lbl.pdf
+- Anidulafungin FDA ürün bilgisi: https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/021632s030lbl.pdf
+- Kaspofungin FDA ürün bilgisi: https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/021227Orig1s040lbl.pdf
