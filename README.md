@@ -1,6 +1,9 @@
 # YBÜ Antibiyotik Karar ve Doz Destek Sistemi v2.1
 
-## v2.1 düzeltmesi
+## u yazılım erişkin yoğun bakım pratiğinde klinik karar desteği amacıyla geliştirilmiştir.
+## Geliştirici
+Prof. Dr. Yalım Dikmen  
+İÜC Cerrahpaşa Tıp Fakültesi
 
 - Kolistin, sefoperazon–sulbaktam, IV fosfomisin, tigesiklin ve ekinokandinler için somut yükleme/idame dozları eklendi.
 - CrCl, HD ve CRRT'ye göre ilgili doz dalları eklendi.
@@ -16,14 +19,24 @@
 
 GitHub Pages üzerinde çalışan, iPhone/iPad ana ekranına kurulabilen çevrimdışı PWA paketidir.
 
-## GitHub'a yükleme
+## Bilimsel kaynaklar
+Uygulamada kullanılan temel kılavuzlar ve yayınlar:
+- Coly-Mycin M (kolistimetat sodyum) FDA ürün bilgisi: https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/050108s041lbl.pdf
+- Uluslararası polimiksin konsensüsü: https://pmc.ncbi.nlm.nih.gov/articles/PMC7437259/
+- Sulperazon Pfizer ürün bilgisi: https://labeling.pfizer.com/ShowLabeling.aspx?id=14308
+- IVOZFO IV fosfomisin ürün monografı: https://pdf.hres.ca/dpd_pm/00067823.PDF
+- Tygacil FDA ürün bilgisi: https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/021821s056lbl.pdf
+- Anidulafungin FDA ürün bilgisi: https://www.accessdata.fda.gov/drugsatfda_docs/label/2020/021632s030lbl.pdf
+- Kaspofungin FDA ürün bilgisi: https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/021227Orig1s040lbl.pdf
 
-1. GitHub'da yeni bir repository oluşturun.
-2. Bu ZIP dosyasını açın ve **klasörün içindeki dosyaların tamamını** repository'nin ana dizinine yükleyin.
-3. Repository'de **Settings → Pages** bölümünü açın.
-4. **Build and deployment** altında `Deploy from a branch` seçin.
-5. Branch olarak `main`, klasör olarak `/(root)` seçip **Save** düğmesine basın.
-6. GitHub'ın verdiği Pages adresini Safari'de açın.
+## Kullanım
+Web tarayıcısı üzerinden veya PWA olarak kullanılabilir.
+
+## Sorumluluk reddi
+BBu yazılım yalnızca sağlık profesyonellerine yönelik eğitim ve klinik karar desteği amacıyla geliştirilmiştir. Bu uygulama ile elde edilen çıktılar tanı veya tedavi kararlarının yerine geçmez. Yazılım tarafından üretilen sonuçlar hastanın klinik durumu, güncel bilimsel kanıtlar, yerel protokoller ve hekimin klinik değerlendirmesi ile birlikte kullanılmalıdır. Bu yazılım ile elde edilen çıktılar tek başına karar verici değildir. Yazılımın kullanımından kaynaklanan klinik karar ve uygulamalardan kullanıcı hekim sorumludur.
+
+## Lisans
+GNU General Public License v3.0
 
 ## iPhone/iPad ana ekranına ekleme
 
@@ -31,10 +44,6 @@ GitHub Pages üzerinde çalışan, iPhone/iPad ana ekranına kurulabilen çevrim
 2. Paylaş düğmesine dokunun.
 3. **Ana Ekrana Ekle** seçeneğini seçin.
 4. Uygulama bundan sonra ana ekrandaki ikonla açılır ve ilk ziyaretten sonra çevrimdışı da kullanılabilir.
-
-## Güncelleme notu
-
-Dosyaları GitHub'da değiştirdikten sonra Safari eski sürümü gösterirse uygulamayı tamamen kapatıp yeniden açın. Gerekirse ana ekran ikonunu kaldırıp Pages adresinden tekrar ekleyin.
 
 ## Klinik güvenlik
 
