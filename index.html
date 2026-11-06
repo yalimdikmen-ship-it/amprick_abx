@@ -62,7 +62,7 @@ button{border:0;border-radius:8px;padding:11px 14px;font-weight:700;cursor:point
 
 <section id="dose" class="panel"><div class="grid">
 <div class="card"><h2>İlaç seçimi</h2><select id="drugs" multiple size="14">
-<option>Meropenem</option><option>Piperasilin-Tazobaktam</option><option>Sefepim</option><option>Seftriakson</option><option>Ertapenem</option><option>Vankomisin</option><option>Amikasin</option><option>Linezolid</option><option>Teikoplanin</option><option>Flukonazol</option><option>Metronidazol</option><option>Klindamisin</option><option>Azitromisin</option><option>Oseltamivir</option></select>
+<option>Meropenem</option><option>Piperasilin-Tazobaktam</option><option>Sefepim</option><option>Seftriakson</option><option>Ertapenem</option><option>Vankomisin</option><option>Amikasin</option><option>Kolistin</option><option>Linezolid</option><option>Teikoplanin</option><option>Flukonazol</option><option>Metronidazol</option><option>Klindamisin</option><option>Azitromisin</option><option>Oseltamivir</option></select>
 <div class="actions"><button id="calcDose" class="primary">Dozları göster</button><button onclick="window.print()" class="green">Yazdır/PDF</button></div>
 <div class="alert danger">TDM YOK: Vankomisin ve amikasin için HD hastalarında doz tahminleri özellikle belirsizdir. KIRMIZI UYARILARI dikkate alın; aminoglikozitte otomatik tekrar dozu verilmez.</div></div>
 <div class="card"><h2>Doz sonuçları</h2><div id="doseSummary" class="alert">Önce renal hesaplama yapın.</div><div id="doseCards"></div></div>
@@ -71,7 +71,7 @@ button{border:0;border-radius:8px;padding:11px 14px;font-weight:700;cursor:point
 <section id="src" class="panel"><div class="card"><h2>Kaynak ve sınırlar</h2><ul>
 <li>Ampirik tedavi seçenekleri önceki klinik algoritmadan korunmuştur; her rejim kültür, direnç ve enfeksiyon odağına göre doğrulanmalıdır.</li><li>Renal dozlar resmi ürün bilgileri esas alınarak özetlenmiştir.</li><li>CRRT dozları yayımlanmış CRRT antimikrobiyal doz derlemelerinden uyarlanmıştır.</li>
 <li>Vankomisin için AUC-temelli TDM önerilir. HD bölümündeki 10 mg/kg HD sonrası idame yalnızca başlangıç tahminidir; düzey izlemi olmadan güvenilir kişiselleştirme yapılamaz.</li>
-<li>Aminoglikozitlerde fazla kiloda AdjBW yaklaşımı kullanılmıştır.</li></ul><p><a href="https://idmp.ucsf.edu/antimicrobial-dosing-intermittent-continuous-hemodialysis" target="_blank">UCSF: Intermittent & Continuous Hemodialysis Dosing</a> (yüksek akımlı HD varsayımı). <a href="https://idmp.ucsf.edu/content/linezolid" target="_blank">Linezolid</a>. Dozlar endikasyon ve yerel direnç verisine göre doğrulanmalıdır.</p><div class="alert danger">Bu yazılım reçete/order oluşturmaz; son karar sorumlu hekimindir.</div></div></section>
+<li>Aminoglikozitlerde fazla kiloda AdjBW yaklaşımı kullanılmıştır.</li><li>Kolistin (CMS) için 2019 uluslararası polimiksin konsensüsünün CrCl-temelli idame tablosu kullanılır; HD ve CRRT için kişiselleştirilmiş otomatik idame hesaplanmaz. 1 milyon IU CMS yaklaşık 33,3 mg CBA ve 80 mg CMS karşılığıdır.</li></ul><p><a href="https://idmp.ucsf.edu/antimicrobial-dosing-intermittent-continuous-hemodialysis" target="_blank">UCSF: Intermittent & Continuous Hemodialysis Dosing</a> (yüksek akımlı HD varsayımı). <a href="https://idmp.ucsf.edu/content/linezolid" target="_blank">Linezolid</a>. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7437259/" target="_blank">Tsuji ve ark., 2019: Uluslararası Polimiksin Konsensüsü</a>. Dozlar endikasyon ve yerel direnç verisine göre doğrulanmalıdır.</p><div class="alert danger">Bu yazılım reçete/order oluşturmaz; son karar sorumlu hekimindir.</div></div></section>
 </main>
 <script>
 (()=>{const $=x=>document.getElementById(x),ck=x=>$(x).checked;let renal={ok:false},regimen=[];
@@ -90,7 +90,20 @@ $("transfer").onclick=()=>{document.querySelector('[data-p="dose"]').click();[..
 $("calcRenal").onclick=()=>{let age=+$("age").value,h=+$("height").value,w=+$("weight").value,s=+$("scr").value,sex=$("sex").value;if(!age||!h||!w||!s)return alert("Tüm hasta verilerini girin");
 let inch=h/2.54,ibw=(sex==="M"?50:45.5)+2.3*Math.max(0,inch-60),bmi=w/(h/100)**2,adj=ibw+0.4*(w-ibw),dw=w<ibw?w:(bmi>=30?adj:w),cr=(140-age)*dw/(72*s)*(sex==="F"?.85:1);
 renal={ok:true,cr,bmi,ibw,adj,dw,w,rrt:$("rrt").value};$("bmi").textContent=bmi.toFixed(1);$("ibw").textContent=ibw.toFixed(1)+" kg";$("adjbw").textContent=adj.toFixed(1)+" kg";$("crcl").textContent=renal.rrt==="hd"?"HD: kullanılmaz":cr.toFixed(1)+" mL/dk";$("weightNote").textContent=renal.rrt==="hd"?"ESRD/HD dozları diyaliz modalitesi ve seans zamanına göre seçilir; hesaplanan CrCl doz belirlemek için kullanılmaz.":"Cockcroft–Gault ağırlığı: "+dw.toFixed(1)+" kg";$("renalWarn").innerHTML=ck("unstable")?'<div class="alert danger">Dinamik AKI: CrCl güvenilir olmayabilir; günlük yeniden hesaplayın.</div>':"";$("renalMsg").classList.add("hidden");$("renalOut").classList.remove("hidden")};
-function dose(d){let c=renal.cr,r=renal.rrt,w=renal.dw;
+function colistinDose(){
+const cr=renal.cr, r=renal.rrt;
+const alertBox='<div class="alert danger"><strong>UYARI:</strong> Kolistimetat sodyum (CMS) için 1 milyon IU ≈ 33,3 mg kolistin baz aktivitesi (CBA) ≈ 80 mg CMS. Reçete, flakon etiketi ve kurum protokolündeki birimleri mutlaka doğrulayın. Nefrotoksisite, nörotoksisite ve eşzamanlı nefrotoksik ilaçlar yönünden izlem gerekir. Dinamik AKI ve TDM yokluğunda idame tahmini güvenilir değildir.</div>';
+const load='<strong>Yükleme (erişkin, IV):</strong> 9 milyon IU CMS (yaklaşık 300 mg CBA), 30–60 dakikada; ilk idame genellikle 12 saat sonra. Düşük vücut ağırlığı (özellikle ≤60 kg) için yükleme dozunu bireyselleştirin.';
+if(r==='hd')return load+'<div class="alert danger"><strong>Aralıklı HD:</strong> Diyaliz günleri ve seans süresine göre ek doz gereksinimi değişir. Bu sürümde güvenilir kişiselleştirilmiş HD idamesi hesaplanmıyor; HD gününe özel kolistin protokolü ve enfeksiyon/klinik eczacılık onayı gerekir. CrCl tablosunu HD hastasına uygulamayın.</div>'+alertBox;
+if(r==='crrt')return load+'<div class="alert danger"><strong>CRRT:</strong> Modalite, effluent (mL/kg/saat), filtre ve kesintiler girilmediği için güvenilir kişiselleştirilmiş idame hesaplanmıyor. CRRT protokolüyle doğrulayın; normal CrCl tablosunu kullanmayın.</div>'+alertBox;
+if(ck('unstable'))return load+'<div class="alert danger"><strong>Dinamik AKI:</strong> Cockcroft–Gault kararlı durum varsayımı geçerli değildir. Otomatik idame hesabı engellendi; günlük klinik/renal değerlendirme ve uzman onayı gerekir.</div>'+alertBox;
+const bands=[[90,10.9,360],[80,10.3,340],[70,9.0,300],[60,8.35,275],[50,7.4,245],[40,6.65,220],[30,5.9,195],[20,5.3,175],[10,4.85,160],[5,4.4,145],[0,3.95,130]];
+const band=bands.find(x=>cr>=x[0]);
+if(!band)return load+alertBox;
+const iu=band[1], cba=band[2];
+return load+'<p><strong>İdame (2019 uluslararası konsensüs tablosu):</strong> '+iu.toLocaleString('tr-TR',{maximumFractionDigits:2})+' milyon IU CMS/gün (yaklaşık '+cba+' mg CBA/gün), iki eşit doza bölünerek <strong>12 saatte bir '+(iu/2).toLocaleString('tr-TR',{maximumFractionDigits:3})+' milyon IU</strong>. İlk idame yüklemeden yaklaşık 12 saat sonra.</p><p>Hesapta kullanılan CrCl: '+cr.toFixed(1)+' mL/dk. Hedef plazma ortalama kolistin konsantrasyonu yaklaşık 2 mg/L; etkinlik ve toksisite nedeniyle klinik doğrulama gerekir.</p>'+alertBox;
+}
+function dose(d){let c=renal.cr,r=renal.rrt,w=renal.dw;if(d==="Kolistin")return colistinDose();
 if(r==="hd"){
 let t=$("hdTiming").value, timing=t==="before"?"DİYALİZ ÖNCESİ: İlk gerekli dozu geciktirmeyin; diyaliz sonrasında yeniden doz gereksinimini kontrol edin.":t==="after"?"Bugünkü dozu HD bittikten sonra uygulayın (ilaç için aksi belirtilmedikçe).":"Diyaliz olmayan gün: günlük rejime devam edin; bir sonraki HD sonrası dozlamayı kontrol edin.";
 let m={
