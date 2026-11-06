@@ -2,41 +2,35 @@
 <html lang="tr">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>Ampirik Antibiyotik Karar ve Doz Destek Sistemi
-Prof. Dr. Yalım Dikmen & Prof. Dr. Gökhan Aygün 
-İÜC. Cerrahpaşa Tıp Fakültesi</title>
-<meta name="description" content="Ampirik antibiyotik seçimi, Cockcroft–Gault kreatinin klirensi, renal doz, obezite ve CRRT karar desteği.">
 <meta name="theme-color" content="#0b2347">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="YBÜ Antibiyotik">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="./icons/icon-192.png">
-<link rel="apple-touch-icon" sizes="180x180" href="./icons/apple-touch-icon.png">
+<link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+<title>YBÜ Ampirik Antibiyotik Kılavuzu | Renal, ESRD/HD ve CRRT</title>
 <style>
-body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033;-webkit-tap-highlight-color:transparent}header{background:#0b2347;color:#fff;padding:calc(20px + env(safe-area-inset-top)) 20px 20px}main{max-width:1100px;margin:auto;padding:16px 16px calc(16px + env(safe-area-inset-bottom))}
+body{margin:0;font-family:Arial,sans-serif;background:#eef3f8;color:#172033}header{background:#0b2347;color:#fff;padding:20px}main{max-width:1100px;margin:auto;padding:16px}
 .tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}.tab{padding:10px 14px;border:0;border-radius:9px;background:#dfe7f1;font-weight:700}.tab.on{background:#0b2347;color:#fff}
 .panel{display:none}.panel.on{display:block}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:850px){.grid{grid-template-columns:1fr}}
 .card{background:#fff;border:1px solid #d8e0ea;border-radius:14px;padding:16px;box-shadow:0 6px 18px #0001}h2,h3{color:#0b2347}
 label{display:block;font-weight:700;margin:8px 0 5px}select,input{width:100%;padding:10px;border:1px solid #b9c6d5;border-radius:8px;font-size:15px;box-sizing:border-box}
 .opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}@media(max-width:600px){.opts{grid-template-columns:1fr}}
 .opt{display:flex;gap:8px;border:1px solid #d8e0ea;border-radius:8px;padding:9px;background:#fbfdff}.opt input{width:auto}
-button{border:0;border-radius:8px;min-height:44px;padding:11px 14px;font-weight:700;cursor:pointer;touch-action:manipulation;-webkit-appearance:none}.primary{background:#0b2347;color:#fff}.green{background:#0f7a4f;color:#fff}.muted{background:#e6ecf3}
+button{border:0;border-radius:8px;padding:11px 14px;font-weight:700;cursor:pointer}.primary{background:#0b2347;color:#fff}.green{background:#0f7a4f;color:#fff}.muted{background:#e6ecf3}
 .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.hidden{display:none!important}
-.result{border-left:6px solid #6741a5;background:#f7f3ff;padding:14px;border-radius:9px;margin:10px 0}.alert{border-left:6px solid #1f5fbf;background:#eef6ff;padding:11px;border-radius:8px;margin:9px 0}.danger{border-color:#b42318;background:#fff0f0;color:#8a1111;font-weight:700}
+.result{border-left:6px solid #6741a5;background:#f7f3ff;padding:14px;border-radius:9px;margin:10px 0}.alert{border-left:6px solid #1f5fbf;background:#eef6ff;padding:11px;border-radius:8px;margin:9px 0}.danger{border-color:#b42318;background:#fff0f0;color:#9b1111;font-weight:700}
 .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}@media(max-width:650px){.kpis{grid-template-columns:1fr 1fr}}.kpi{background:#f4f7fb;border:1px solid #d8e0ea;border-radius:9px;padding:10px}.kpi b{display:block;font-size:18px;color:#0b2347}
-.dose{border:1px solid #d8e0ea;border-radius:9px;padding:11px;margin:8px 0}.dose h4{margin:0 0 6px;color:#6741a5}.algorithm{margin-top:12px;padding:13px;border:2px solid #aeb7c3;border-radius:10px;background:#f7f8fa}.algorithm h4{margin:0 0 8px;color:#0b2347}.flora{border-left-color:#e97816;background:#fff6e8;color:#713b00;font-weight:700}
+.dose{border:1px solid #d8e0ea;border-radius:9px;padding:11px;margin:8px 0}.dose h4{margin:0 0 6px;color:#6741a5}
 @media print{.tabs,.no-print{display:none!important}.panel{display:block!important}.card{box-shadow:none}}
 </style>
 </head>
 <body>
-<header><h1>Ampirik Antibiyotik Karar ve Doz Destek Sistemi<h1>
-<h1>Prof. Dr. Yalım Dikmen & Prof. Dr. Gökhan Aygün<h1>
-<h1>İÜC. Cerrahpaşa Tıp Fakültesi<h1></h1><div>Klinik Sorunu ve Hasta Bilgilerini İlgili Kutucuklara Girin</div></header>
+<header><h1>YBÜ Ampirik Antibiyotik Kılavuzu</h1><div>Ampirik tedavi algoritmaları · Obezite · Renal doz · ESRD / Hemodiyaliz · CRRT</div></header>
 <main>
 <div class="tabs no-print">
 <button class="tab on" data-p="emp">Ampirik tedavi</button>
-<button class="tab" data-p="renal">Renal/obezite</button>
+<button class="tab" data-p="renal">Renal / ESRD / HD</button>
 <button class="tab" data-p="dose">Doz önerileri</button>
 <button class="tab" data-p="src">Kaynaklar</button>
 </div>
@@ -51,8 +45,8 @@ button{border:0;border-radius:8px;min-height:44px;padding:11px 14px;font-weight:
 <div id="pneu" class="hidden"><h3>Pnömoniye özgü</h3><div class="opts"><label class="opt"><input type="checkbox" id="structural">Yapısal akciğer hastalığı</label><label class="opt"><input type="checkbox" id="influenza">İnfluenza sezonu</label></div></div>
 <div id="intra" class="hidden"><h3>Batın içi enfeksiyon</h3><select id="gi"><option>Alt GİS</option><option>Üst GİS</option></select></div>
 <div id="ssti" class="hidden"><h3>Deri/yumuşak doku</h3><label class="opt"><input type="checkbox" id="necrotizing">Nekrotizan fasiit/Fournier şüphesi</label></div>
-<div id="hosp" class="hidden"><div class="algorithm"><h4>Hastanede yatarken gelişen sepsis algoritması</h4><div class="alert flora">Ünite florası belirleyicidir.</div><label>Son 7 gün içerisinde kullanmakta olduğu antibiyotik tedavisi</label><select id="lastAbx"><option>Kullanmıyor</option><option>Seftriakson / Sefepim / Piperasilin-Tazobaktam</option><option>Karbapenem</option><option>Kolistin</option></select><label>Cerrahpaşa Candida skoru</label><input id="candidaScore" type="number" min="0" max="10" step="1" value="0" inputmode="numeric"><div class="alert">Skor ≥4 ise ekinokandin düşünülebilir.</div></div></div>
-<div class="actions"><button type="button" id="decide" class="primary">Kararı oluştur</button><button type="button" id="resetApp" class="muted">Temizle</button></div></div>
+<div id="hosp" class="hidden"><h3>Son 7 gün antibiyotik</h3><select id="lastAbx"><option>Kullanmıyor</option><option>Seftriakson / Sefepim / Piperasilin-Tazobaktam</option><option>Karbapenem</option><option>Kolistin</option></select></div>
+<div class="actions"><button id="decide" class="primary">Kararı oluştur</button><button onclick="location.reload()" class="muted">Temizle</button></div></div>
 <div class="card"><h2>Ampirik karar</h2><div id="empMsg" class="alert">Klinik verileri seçin.</div><div id="empOut" class="hidden"><div class="result"><b id="regimen"></b></div><div id="alerts"></div><ul id="why"></ul><button id="transfer" class="green no-print">Doz modülüne aktar</button></div></div>
 </div></section>
 
@@ -60,31 +54,29 @@ button{border:0;border-radius:8px;min-height:44px;padding:11px 14px;font-weight:
 <div class="card"><h2>Hasta bilgileri</h2>
 <label>Yaş</label><input id="age" type="number"><label>Cinsiyet</label><select id="sex"><option value="M">Erkek</option><option value="F">Kadın</option></select>
 <label>Boy (cm)</label><input id="height" type="number"><label>Gerçek ağırlık (kg)</label><input id="weight" type="number" step="0.1">
-<label>Serum kreatinin (mg/dL)</label><input id="scr" type="number" step="0.1"><label>Renal destek</label><select id="rrt"><option value="none">Yok</option><option value="hd">Hemodiyaliz</option><option value="crrt">CRRT</option></select><label>Karaciğer fonksiyonu</label><select id="hepatic"><option value="normal">Normal / Child–Pugh A–B</option><option value="childC">Child–Pugh C</option></select>
-<label class="opt"><input type="checkbox" id="unstable">Kreatinin hızla değişiyor / dinamik AKI</label><div class="actions"><button id="calcRenal" class="primary">Hesapla</button></div></div>
+<label>Serum kreatinin (mg/dL)</label><input id="scr" type="number" step="0.1"><label>Renal destek</label><select id="rrt"><option value="none">Yok</option><option value="hd">ESRD – kronik aralıklı hemodiyaliz (yüksek akımlı)</option><option value="crrt">CRRT</option></select>
+<div id="hdDetails" class="hidden"><label>Diyaliz zamanlaması</label><select id="hdTiming"><option value="after">Bugün diyaliz var – seans sonrası</option><option value="before">Bugün diyaliz var – seans öncesi</option><option value="off">Diyaliz olmayan gün</option></select><div class="alert danger">ESRD/HD hastasında Cockcroft–Gault ile hesaplanan CrCl doz seçiminde KULLANILMAZ. Bu bölüm yüksek akımlı aralıklı HD içindir; periton diyalizi, SLED ve CRRT için geçerli değildir.</div></div><label class="opt"><input type="checkbox" id="unstable">Kreatinin hızla değişiyor / dinamik AKI</label><div class="actions"><button id="calcRenal" class="primary">Hesapla</button></div></div>
 <div class="card"><h2>Hesaplama</h2><div id="renalMsg" class="alert">Hasta bilgilerini girin.</div><div id="renalOut" class="hidden"><div class="kpis">
 <div class="kpi">BMI<b id="bmi"></b></div><div class="kpi">IBW<b id="ibw"></b></div><div class="kpi">AdjBW<b id="adjbw"></b></div><div class="kpi">CrCl<b id="crcl"></b></div></div><div id="weightNote" class="alert"></div><div id="renalWarn"></div></div></div>
 </div></section>
 
 <section id="dose" class="panel"><div class="grid">
 <div class="card"><h2>İlaç seçimi</h2><select id="drugs" multiple size="14">
-<option>Meropenem</option><option>Piperasilin-Tazobaktam</option><option>Sefepim</option><option>Seftriakson</option><option>Ertapenem</option><option>Vankomisin</option><option>Amikasin</option><option>Linezolid</option><option>Teikoplanin</option><option>Kolistin</option><option>Sulperazon</option><option>Fosfomisin</option><option>Tigesiklin</option><option>Ekinokandin</option><option>Flukonazol</option><option>Metronidazol</option><option>Klindamisin</option><option>Azitromisin</option><option>Oseltamivir</option></select>
-<div class="actions"><button type="button" id="calcDose" class="primary">Dozları göster</button><button type="button" id="printApp" class="green">Yazdır/PDF</button></div>
-<div class="alert danger"><strong>TDM OLMAYAN MERKEZ UYARISI:</strong> Vankomisin ve amikasin için bu araç başlangıç/idame önerisi üretir; serum kreatinin günlük izlenmeli, nefrotoksisite ve ototoksisite açısından hasta yakından takip edilmeli ve tedavi süresi mümkün olduğunca kısa tutulmalıdır.</div></div>
+<option>Meropenem</option><option>Piperasilin-Tazobaktam</option><option>Sefepim</option><option>Seftriakson</option><option>Ertapenem</option><option>Vankomisin</option><option>Amikasin</option><option>Linezolid</option><option>Teikoplanin</option><option>Flukonazol</option><option>Metronidazol</option><option>Klindamisin</option><option>Azitromisin</option><option>Oseltamivir</option></select>
+<div class="actions"><button id="calcDose" class="primary">Dozları göster</button><button onclick="window.print()" class="green">Yazdır/PDF</button></div>
+<div class="alert danger">TDM YOK: Vankomisin ve amikasin için HD hastalarında doz tahminleri özellikle belirsizdir. KIRMIZI UYARILARI dikkate alın; aminoglikozitte otomatik tekrar dozu verilmez.</div></div>
 <div class="card"><h2>Doz sonuçları</h2><div id="doseSummary" class="alert">Önce renal hesaplama yapın.</div><div id="doseCards"></div></div>
 </div></section>
 
 <section id="src" class="panel"><div class="card"><h2>Kaynak ve sınırlar</h2><ul>
-<li>Renal dozlar resmi ürün bilgileri esas alınarak özetlenmiştir.</li><li>CRRT dozları yayımlanmış CRRT antimikrobiyal doz derlemelerinden uyarlanmıştır.</li>
-<li>Vankomisin için güncel kılavuz AUC-temelli TDM önermektedir; TDM olmayan klinikte bu araç yükleme ve uyarı sağlar.</li>
-<li>Aminoglikozitlerde fazla kiloda AdjBW yaklaşımı kullanılmıştır.</li>
-<li>Kolistin dozları uluslararası polimiksin konsensüsü; sefoperazon–sulbaktam dozları Pfizer 1:1 ürün bilgisi; IV fosfomisin dozları IVOZFO ürün monografı esas alınarak düzenlenmiştir.</li>
-<li>Ekinokandin dozları invaziv kandidiyaz/kandidemi içindir. Tigesiklinin yüksek doz rejimi ağır MDRO enfeksiyonlarında kurum tercihi olarak off-label kullanımdır.</li></ul><div class="alert danger">Bu yazılım reçete/order oluşturmaz; son karar sorumlu hekimindir.</div></div></section>
+<li>Ampirik tedavi seçenekleri önceki klinik algoritmadan korunmuştur; her rejim kültür, direnç ve enfeksiyon odağına göre doğrulanmalıdır.</li><li>Renal dozlar resmi ürün bilgileri esas alınarak özetlenmiştir.</li><li>CRRT dozları yayımlanmış CRRT antimikrobiyal doz derlemelerinden uyarlanmıştır.</li>
+<li>Vankomisin için AUC-temelli TDM önerilir. HD bölümündeki 10 mg/kg HD sonrası idame yalnızca başlangıç tahminidir; düzey izlemi olmadan güvenilir kişiselleştirme yapılamaz.</li>
+<li>Aminoglikozitlerde fazla kiloda AdjBW yaklaşımı kullanılmıştır.</li></ul><p><a href="https://idmp.ucsf.edu/antimicrobial-dosing-intermittent-continuous-hemodialysis" target="_blank">UCSF: Intermittent & Continuous Hemodialysis Dosing</a> (yüksek akımlı HD varsayımı). <a href="https://idmp.ucsf.edu/content/linezolid" target="_blank">Linezolid</a>. Dozlar endikasyon ve yerel direnç verisine göre doğrulanmalıdır.</p><div class="alert danger">Bu yazılım reçete/order oluşturmaz; son karar sorumlu hekimindir.</div></div></section>
 </main>
 <script>
 (()=>{const $=x=>document.getElementById(x),ck=x=>$(x).checked;let renal={ok:false},regimen=[];
 document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab,.panel").forEach(x=>x.classList.remove("on"));b.classList.add("on");$(b.dataset.p).classList.add("on")});
-function blocks(){let f=$("focus").value;$("pneu").classList.toggle("hidden",f!=="Pnömoni");$("intra").classList.toggle("hidden",f!=="Batın içi sepsis");$("ssti").classList.toggle("hidden",f!=="Deri / yumuşak doku sepsisi");$("hosp").classList.toggle("hidden",f!=="Hastanede gelişen sepsis")}$("focus").onchange=blocks;
+function blocks(){let f=$("focus").value;$("pneu").classList.toggle("hidden",f!=="Pnömoni");$("intra").classList.toggle("hidden",f!=="Batın içi sepsis");$("ssti").classList.toggle("hidden",f!=="Deri / yumuşak doku sepsisi");$("hosp").classList.toggle("hidden",f!=="Hastanede gelişen sepsis")}$("focus").onchange=blocks;$("rrt").onchange=()=>$("hdDetails").classList.toggle("hidden",$("rrt").value!=="hd");
 function risk(){return ck("recent")||ck("chemo")||ck("immuno")||ck("previous")}
 $("decide").onclick=()=>{let f=$("focus").value;if(!f)return alert("Odağı seçin");let high=ck("shock")||risk(),r="",a=[],w=[];
 if(f==="Odağı belli olmayan sepsis")r=high?"Meropenem + Vankomisin (± Amikasin)":"Piperasilin-Tazobaktam veya Sefepim";
@@ -92,14 +84,34 @@ if(f==="Pnömoni"){r=high?"Meropenem + Vankomisin veya Linezolid + Azitromisin":
 if(f==="Ürosepsis")r=high?"Meropenem + Amikasin":ck("bedbound")?"Piperasilin-Tazobaktam":"Ertapenem veya Seftriakson";
 if(f==="Batın içi sepsis"){r=$("gi").value==="Üst GİS"?"Piperasilin-Tazobaktam + Teikoplanin + Flukonazol":high?"Meropenem + Teikoplanin + Amikasin":"Piperasilin-Tazobaktam veya Ertapenem veya Seftriakson + Metronidazol";a.push("Erken cerrahi değerlendirme ve odak kontrolü gerekir.")}
 if(f==="Deri / yumuşak doku sepsisi"){r=risk()?"Meropenem + Vankomisin veya Teikoplanin":"Piperasilin-Tazobaktam veya Ampisilin-Sulbaktam";if(ck("necrotizing")){r+=" + Klindamisin";a.push("Acil cerrahi değerlendirme gerekir.")}}
-if(f==="Hastanede gelişen sepsis"){let x=$("lastAbx").value,cs=Number($("candidaScore").value)||0;if(x==="Kullanmıyor"){r="Meropenem + Amikasin + Vankomisin";w.push("Son 7 günde antibiyotik kullanmıyor.")}else if(x.startsWith("Seftriakson")){r="Meropenem + Kolistin + Teikoplanin";w.push("Son 7 günde seftriakson, sefepim veya piperasilin-tazobaktam kullanıyor.")}else if(x==="Karbapenem"){r="Kolistin + Sulperazon + Fosfomisin veya Tigesiklin";w.push("Son 7 günde karbapenem kullanıyor.")}else{r="Meropenem + Amikasin + Fosfomisin veya Tigesiklin";w.push("Son 7 günde kolistin kullanıyor.")}a.push("Ünite florası ve son kültürler belirleyicidir.");if(cs>=4){r+=" + Ekinokandin düşünülebilir";a.push("Cerrahpaşa Candida skoru ≥4: ekinokandin düşünülebilir.");w.push("Candida skoru: "+cs+".")}else{w.push("Candida skoru <4 (girilen skor: "+cs+").")}}
-regimen=r.replace(/[()±]/g,"").split(/\s+\+\s+|\s+veya\s+/).map(x=>x.replace(" düşünülebilir","").trim());$("regimen").textContent=r;$("alerts").innerHTML=a.map(x=>'<div class="alert danger">'+x+"</div>").join("");$("why").innerHTML=(w.length?w:[high?"Yüksek risk/şok yaklaşımı.":"Düşük risk yaklaşımı."]).map(x=>"<li>"+x+"</li>").join("");$("empMsg").classList.add("hidden");$("empOut").classList.remove("hidden")};
+if(f==="Hastanede gelişen sepsis"){let x=$("lastAbx").value;r=x==="Kullanmıyor"?"Meropenem + Amikasin + Vankomisin":x.startsWith("Seftriakson")?"Meropenem + Kolistin + Teikoplanin":x==="Karbapenem"?"Kolistin + Sulperazon + Fosfomisin veya Tigesiklin":"Meropenem + Amikasin + Fosfomisin veya Tigesiklin";a.push("Ünite florası ve son kültürler belirleyicidir.")}
+regimen=r.replace(/[()±]/g,"").split(/\s+\+\s+|\s+veya\s+/).map(x=>x.trim());$("regimen").textContent=r;$("alerts").innerHTML=a.map(x=>'<div class="alert danger">'+x+"</div>").join("");$("why").innerHTML='<li>'+(high?"Yüksek risk/şok yaklaşımı.":"Düşük risk yaklaşımı.")+"</li>";$("empMsg").classList.add("hidden");$("empOut").classList.remove("hidden")};
 $("transfer").onclick=()=>{document.querySelector('[data-p="dose"]').click();[...$("drugs").options].forEach(o=>o.selected=regimen.some(r=>r.includes(o.value)||o.value.includes(r)))};
 $("calcRenal").onclick=()=>{let age=+$("age").value,h=+$("height").value,w=+$("weight").value,s=+$("scr").value,sex=$("sex").value;if(!age||!h||!w||!s)return alert("Tüm hasta verilerini girin");
 let inch=h/2.54,ibw=(sex==="M"?50:45.5)+2.3*Math.max(0,inch-60),bmi=w/(h/100)**2,adj=ibw+0.4*(w-ibw),dw=w<ibw?w:(bmi>=30?adj:w),cr=(140-age)*dw/(72*s)*(sex==="F"?.85:1);
-renal={ok:true,cr,bmi,ibw,adj,dw,w,rrt:$("rrt").value,hepatic:$("hepatic").value};$("bmi").textContent=bmi.toFixed(1);$("ibw").textContent=ibw.toFixed(1)+" kg";$("adjbw").textContent=adj.toFixed(1)+" kg";$("crcl").textContent=cr.toFixed(1)+" mL/dk";$("weightNote").textContent="Cockcroft–Gault ağırlığı: "+dw.toFixed(1)+" kg";$("renalWarn").innerHTML=ck("unstable")?'<div class="alert danger">Dinamik AKI: CrCl güvenilir olmayabilir; günlük yeniden hesaplayın.</div>':"";$("renalMsg").classList.add("hidden");$("renalOut").classList.remove("hidden")};
+renal={ok:true,cr,bmi,ibw,adj,dw,w,rrt:$("rrt").value};$("bmi").textContent=bmi.toFixed(1);$("ibw").textContent=ibw.toFixed(1)+" kg";$("adjbw").textContent=adj.toFixed(1)+" kg";$("crcl").textContent=renal.rrt==="hd"?"HD: kullanılmaz":cr.toFixed(1)+" mL/dk";$("weightNote").textContent=renal.rrt==="hd"?"ESRD/HD dozları diyaliz modalitesi ve seans zamanına göre seçilir; hesaplanan CrCl doz belirlemek için kullanılmaz.":"Cockcroft–Gault ağırlığı: "+dw.toFixed(1)+" kg";$("renalWarn").innerHTML=ck("unstable")?'<div class="alert danger">Dinamik AKI: CrCl güvenilir olmayabilir; günlük yeniden hesaplayın.</div>':"";$("renalMsg").classList.add("hidden");$("renalOut").classList.remove("hidden")};
 function dose(d){let c=renal.cr,r=renal.rrt,w=renal.dw;
-if(r==="crrt"){let m={"Meropenem":"1 g IV 8 saatte bir; 3 saat uzamış infüzyon düşünülebilir.","Piperasilin-Tazobaktam":"4.5 g IV 6–8 saatte bir; uzamış infüzyon.","Sefepim":"2 g IV 8–12 saatte bir; nörotoksisite izlemi.","Seftriakson":"2 g IV 24 saatte bir.","Linezolid":"600 mg IV/PO 12 saatte bir.","Metronidazol":"500 mg IV 8–12 saatte bir.","Klindamisin":"600–900 mg IV 8 saatte bir.","Azitromisin":"500 mg IV/PO 24 saatte bir.","Flukonazol":"Yükleme tam; çoğunlukla 400–800 mg/gün, effluent hızına göre doğrulayın."};if(m[d])return m[d]}
+if(r==="hd"){
+let t=$("hdTiming").value, timing=t==="before"?"DİYALİZ ÖNCESİ: İlk gerekli dozu geciktirmeyin; diyaliz sonrasında yeniden doz gereksinimini kontrol edin.":t==="after"?"Bugünkü dozu HD bittikten sonra uygulayın (ilaç için aksi belirtilmedikçe).":"Diyaliz olmayan gün: günlük rejime devam edin; bir sonraki HD sonrası dozlamayı kontrol edin.";
+let m={
+"Meropenem":"500 mg IV başlangıç, ardından her akşam 500 mg IV (qPM); HD günlerinde seans sonrasında. Menenjitte 1 g başlangıç/akşam rejimi uzman onayıyla.",
+"Piperasilin-Tazobaktam":"2.25 g IV 8 saatte bir, 30 dakika infüzyon; HD sonrası zamanlama/ek doz gereksinimini yerel ürün bilgisiyle doğrulayın.",
+"Sefepim":"Stabil HD programında 2 g IV başlangıç ve her HD sonrası 2 g IV; stabil olmayan programda 1 g IV başlangıç, ardından her akşam 1 g IV. Nörotoksisite açısından dikkat.",
+"Seftriakson":"1–2 g IV 24 saatte bir; çoğunlukla HD ayarı gerekmez.",
+"Ertapenem":"500 mg IV başlangıç, ardından her akşam 500 mg IV; HD günlerinde seans sonrasında. Nörotoksisite açısından izlem.",
+"Linezolid":"600 mg IV/PO 12 saatte bir; HD nedeniyle rutin doz değişikliği gerekmez. Hemogram/trombosit izleyin.",
+"Flukonazol":"İlk yükleme dozu tam; idame dozu endikasyona göre HD sonrasında verilir (sistemik enfeksiyonda sık kullanılan 400 mg HD sonrası). Endikasyon ve HD sıklığını doğrulayın.",
+"Metronidazol":"500 mg IV/PO 8–12 saatte bir (intraabdominal enfeksiyonda 12 saatte bir); HD günlerinde seans sonrasında zamanlayın.",
+"Klindamisin":"600–900 mg IV 8 saatte bir; HD için doz ayarı gerekmez.",
+"Azitromisin":"500 mg IV/PO 24 saatte bir; genellikle HD ayarı gerekmez.",
+"Oseltamivir":"HD için özel doz gerekir; influenza tedavisinde 30 mg ilk doz, ardından her HD seansı sonrası 30 mg (en çok 5 günlük tedavi dönemi); güncel ürün bilgisiyle doğrulayın.",
+"Vankomisin":"Yükleme yaklaşık 20–25 mg/kg GERÇEK ağırlık ("+Math.round(25*renal.w/250)*250+" mg örnek). HD sonrası başlangıç idamesi yaklaşık 10 mg/kg ("+Math.round(10*renal.w/250)*250+" mg) HER HD SONRASI; bu yalnızca başlangıç tahminidir. <div class=\"alert danger\"><strong>⚠ TDM YOK: SABİT İDAME GÜVENİLİR DEĞİLDİR. DÜZEY ÖLÇÜMÜ SAĞLANMALI; GÜNLÜK KLİNİK VE TOKSİSİTE İZLEMİ YAPILMALIDIR. DİYALİZ SEANSI ATLAMALARINDA DOZU OTOMATİK TEKRARLAMAYIN.</strong></div>",
+"Amikasin":"Başlangıç yaklaşık 15 mg/kg (obezitede düzeltilmiş ağırlık) IV: "+Math.round(15*(renal.bmi>=25?renal.adj:renal.w)/50)*50+" mg. <div class=\"alert danger\"><strong>⚠ TDM YOK: HD HASTASINDA GÜVENİLİR SABİT TEKRAR DOZU/ARALIĞI HESAPLANAMAZ. İKİNCİ DOZU OTOMATİK VERMEYİN; MÜMKÜNSE ALTERNATİF ANTİBİYOTİK SEÇİN VE UZMAN GÖRÜŞÜ ALIN. OTOTOKSİSİTE VE REZİDÜEL RENAL FONKSİYONU İZLEYİN.</strong></div>",
+"Teikoplanin":"Başlangıç yükleme dozu böbrek fonksiyonundan bağımsızdır; HD idamesi renal protokole göre bireyselleştirilmelidir. TDM yoksa uzman doğrulaması gerekir."
+};return (m[d]||"Bu ilaç için güvenilir HD doz verisi bu sürümde bulunmuyor; uzman doğrulaması gerekir.")+"<div class=\"alert\">"+timing+"</div>";
+}
+
+if(r==="crrt"){let m={"Meropenem":"1 g IV 8 saatte bir; 3 saat uzamış infüzyon düşünülebilir.","Piperasilin-Tazobaktam":"4.5 g IV 6–8 saatte bir; uzamış infüzyon.","Sefepim":"2 g IV 8–12 saatte bir; nörotoksisite izlemi.","Seftriakson":"2 g IV 24 saatte bir.","Linezolid":"600 mg IV/PO 12 saatte bir.","Metronidazol":"500 mg IV 8–12 saatte bir.","Klindamisin":"600–900 mg IV 8 saatte bir.","Azitromisin":"500 mg IV/PO 24 saatte bir.","Flukonazol":"Yükleme tam; çoğunlukla 400–800 mg/gün, effluent hızına göre doğrulayın."};return m[d]||"CRRT modalitesi ve effluent hızına göre kurum protokolüyle doğrulayın."}
 if(d==="Meropenem")return c>50?"1 g IV q8s":c>=26?"1 g IV q12s":c>=10?"500 mg IV q12s":"500 mg IV q24s";
 if(d==="Piperasilin-Tazobaktam")return c>40?"Genel 3.375 g q6s; nozokomiyal pnömoni 4.5 g q6s":c>=20?"Genel 2.25 g q6s; nozokomiyal pnömoni 3.375 g q6s":"Genel 2.25 g q8s; nozokomiyal pnömoni 2.25 g q6s";
 if(d==="Ertapenem")return c>30?"1 g IV q24s":"500 mg IV q24s";
@@ -111,65 +123,11 @@ if(d==="Metronidazol")return"500 mg IV q8–12s";
 if(d==="Klindamisin")return"600–900 mg IV q8s; renal ayar yok";
 if(d==="Azitromisin")return"500 mg IV/PO q24s; renal ayar yok";
 if(d==="Oseltamivir")return c>60?"75 mg PO q12s":c>=31?"30 mg PO q12s":c>=11?"30 mg PO q24s":"Diyaliz/çok düşük CrCl: kurum protokolü";
-if(d==="Kolistin"){
-let daily=0,txt="";
-if(r==="crrt")txt="Yükleme: 9 milyon IU CMS (≈300 mg CBA) IV tek doz. İdame: 6,6 milyon IU CMS (≈220 mg CBA) IV 12 saatte bir.";
-else if(r==="hd")txt="Yükleme: 9 milyon IU CMS (≈300 mg CBA) IV tek doz. İdame: diyaliz dışı günlerde 2 milyon IU CMS (≈67 mg CBA) IV 12 saatte bir; HD gününde seans sonunda ek 1,6 milyon IU (4 saatlik HD) veya 1,2 milyon IU (3 saatlik HD).";
-else{daily=c>=90?360:c>=80?340:c>=70?300:c>=60?275:c>=50?245:c>=40?220:c>=30?195:c>=20?175:c>=10?160:c>=5?145:130;txt="Yükleme: 9 milyon IU CMS (≈300 mg CBA) IV tek doz. İdame toplam: "+daily+" mg CBA/gün (≈"+(daily/33.3).toFixed(1)+" milyon IU CMS/gün), tercihen 12 saatte iki eşit doza bölünür."}
-return txt+' <div class="alert danger"><strong>BİRİM GÜVENLİĞİ:</strong> Dozlar kolistimetat sodyum (CMS) içindir. 1 milyon IU CMS ≈33 mg kolistin baz aktivitesi (CBA); ürün etiketi mutlaka aynı birimle kontrol edilmelidir. Kreatinin ve nörotoksisite günlük izlenmelidir.</div>';
-}
-if(d==="Sulperazon"){
-let txt=r==="crrt"?"Sefoperazon/sulbaktam 1:1: 4 g IV 12 saatte bir (her doz 2 g + 2 g).":c>=30?"Sefoperazon/sulbaktam 1:1: ağır/refrakter enfeksiyonda 4 g IV 12 saatte bir (her doz 2 g + 2 g).":c>=15?"Sefoperazon/sulbaktam 1:1: 2 g IV 12 saatte bir (her doz 1 g + 1 g; sulbaktam en çok 2 g/gün).":"Sefoperazon/sulbaktam 1:1: 1 g IV 12 saatte bir (her doz 0,5 g + 0,5 g; sulbaktam en çok 1 g/gün).";
-if(r==="hd")txt="Sefoperazon/sulbaktam 1:1: 1 g IV 12 saatte bir; HD gününde doz seans sonrasına planlanır. Ağır enfeksiyonda ek sefoperazon gereksinimi ayrıca değerlendirilir.";
-return txt+' <div class="alert"><strong>İzlem:</strong> INR/kanama, trombosit ve karaciğer fonksiyonu; ağır hepatik disfonksiyon + renal yetmezlikte sefoperazon bileşeni 2 g/günü aşmamalıdır.</div>';
-}
-if(d==="Fosfomisin"){
-let txt="";
-if(r==="crrt")txt="Yükleme: 8 g IV. İdame: 8 g IV 8 saatte bir (24 g/gün); bu rejim post-dilüsyon CVVHF için doz azaltılmaması yaklaşımına dayanır.";
-else if(r==="hd")txt="Yükleme: 8 g IV. İdame: her kronik aralıklı HD seansının sonunda 2 g IV.";
-else if(c>=40)txt="Yükleme: 8 g IV. İdame: ağır/az duyarlı etken enfeksiyonunda 8 g IV 8 saatte bir (24 g/gün).";
-else if(c>=30)txt="Yükleme: 8 g IV. İdame: 6 g IV 8 saatte bir (18 g/gün; normal dozun yaklaşık %70'i).";
-else if(c>=20)txt="Yükleme: 8 g IV. İdame: 4 g IV 8 saatte bir (12 g/gün; yaklaşık %50–60).";
-else if(c>=10)txt="Yükleme: 8 g IV. İdame: 4 g IV 12 saatte bir (8 g/gün; yaklaşık %40).";
-else txt="Yükleme: 8 g IV. İdame: 4 g IV 24 saatte bir (4 g/gün; yaklaşık %20).";
-return txt+' <div class="alert"><strong>İzlem:</strong> Her tek doz en çok 8 g; sodyum yükü, Na/K, sıvı dengesi ve renal fonksiyon günlük değerlendirilir.</div>';
-}
-if(d==="Tigesiklin"){
-if(renal.hepatic==="childC")return'Yükleme: 100 mg IV; idame: 25 mg IV 12 saatte bir (Child–Pugh C). Renal yetmezlik, HD veya CRRT için ek ayar gerekmez.<div class="alert danger"><strong>UYARI:</strong> HAP/VAP için onaylı değildir; bakteriyemi ve üriner odakta düşük serum/üriner düzey nedeniyle tek başına tercih edilmez.</div>';
-return'Kurum ağır MDRO rejimi: 200 mg IV yükleme, ardından 100 mg IV 12 saatte bir (off-label yüksek doz). Standart ruhsatlı rejim: 100 mg yükleme, ardından 50 mg IV 12 saatte bir. Renal yetmezlik, HD veya CRRT için ayar gerekmez.<div class="alert danger"><strong>UYARI:</strong> HAP/VAP için onaylı değildir ve standart doz çalışmasında daha düşük kür/yüksek mortalite bildirilmiştir; bakteriyemi ve üriner odakta monoterapi olarak uygun değildir.</div>';
-}
-if(d==="Ekinokandin")return'<strong>İnvaziv kandidiyaz/kandidemi seçenekleri:</strong><ul><li>Anidulafungin: 200 mg IV yükleme, ardından 100 mg IV 24 saatte bir.</li><li>Kaspofungin: 70 mg IV yükleme, ardından 50 mg IV 24 saatte bir.</li><li>Mikafungin: 100 mg IV 24 saatte bir; yükleme gerekmez.</li></ul>Renal yetmezlik, HD ve CRRT için doz azaltılmaz. Child–Pugh C veya belirgin hepatik disfonksiyonda ajan seçimi ve karaciğer testleri ayrıca değerlendirilir.';
-if(d==="Vankomisin"){
-let load=Math.round(25*w/250)*250, maint="", interval="";
-if(c>=80){maint=Math.round(17.5*w/250)*250;interval="12 saatte bir";}
-else if(c>=50){maint=Math.round(15*w/250)*250;interval="12 saatte bir";}
-else if(c>=20){maint=Math.round(15*w/250)*250;interval="24 saatte bir";}
-else{maint=Math.round(15*w/250)*250;interval="tek doz sonrası günlük yeniden değerlendirme";}
-return "Yükleme: yaklaşık "+load+" mg IV. İdame başlangıç önerisi: yaklaşık "+maint+" mg IV, "+interval+
-". <div class=\"alert danger\"><strong>TDM OLMAYAN MERKEZ UYARISI:</strong> Serum kreatinin günlük izlenmeli; nefrotoksisite, idrar çıkışı ve eş zamanlı nefrotoksik ilaçlar yakından değerlendirilmelidir. Klinik yanıt ve böbrek fonksiyonuna göre doz/aralık her gün yeniden gözden geçirilmelidir.</div>";
-}
-if(d==="Amikasin"){
-let aw=renal.bmi>=25?renal.adj:renal.w, load=Math.round(20*aw/50)*50, maint=Math.round(15*aw/50)*50, interval="";
-if(c>60)interval="24 saatte bir";
-else if(c>=40)interval="36 saatte bir";
-else if(c>=20)interval="48 saatte bir";
-else interval="tek doz sonrası günlük yeniden değerlendirme";
-return "Başlangıç: yaklaşık "+load+" mg IV. İdame başlangıç önerisi: yaklaşık "+maint+" mg IV, "+interval+
-". Kullanılan doz ağırlığı: "+aw.toFixed(1)+" kg. <div class=\"alert danger\"><strong>TDM OLMAYAN MERKEZ UYARISI:</strong> Serum kreatinin günlük izlenmeli; nefrotoksisite ve ototoksisite bulguları açısından hasta yakından takip edilmelidir. Tedavi mümkün olan en kısa sürede sonlandırılmalı; özellikle 5–7 günü aşan kullanımlarda uzman değerlendirmesi yapılmalıdır.</div>";
-}
+if(d==="Vankomisin")return"Yükleme yaklaşık "+(Math.round(25*w/250)*250)+" mg IV; TDM yoksa kesin idame otomatik verilmez";
+if(d==="Amikasin"){let aw=renal.bmi>=25?renal.adj:renal.w;return"Başlangıç yaklaşık "+(Math.round(20*aw/50)*50)+" mg IV; TDM yoksa tekrarlayan doz otomatik verilmez"}
 if(d==="Teikoplanin")return"Yükleme 6–12 mg/kg q12s, 3–5 doz; idame renal fonksiyona göre";
 return"Standart erişkin doz; kurum protokolüyle doğrulayın"}
-$("calcDose").onclick=()=>{if(!renal.ok)return alert("Önce renal hesaplama yapın");let ds=[...$("drugs").selectedOptions].map(o=>o.value);if(!ds.length)return alert("İlaç seçin");$("doseSummary").innerHTML="CrCl <b>"+renal.cr.toFixed(1)+" mL/dk</b> | BMI <b>"+renal.bmi.toFixed(1)+"</b> | Destek <b>"+renal.rrt+"</b>";$("doseCards").innerHTML=ds.map(d=>'<div class="dose"><h4>'+d+"</h4>"+dose(d)+"</div>").join("")};
-$("resetApp").addEventListener("click",()=>location.reload());
-$("printApp").addEventListener("click",()=>window.print());
-blocks();
-if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}))}
-})();
+$("calcDose").onclick=()=>{if(!renal.ok)return alert("Önce renal hesaplama yapın");let ds=[...$("drugs").selectedOptions].map(o=>o.value);if(!ds.length)return alert("İlaç seçin");$("doseSummary").innerHTML=""+(renal.rrt==="hd"?"ESRD / aralıklı HD (CrCl kullanılmaz)":"CrCl <b>"+renal.cr.toFixed(1)+" mL/dk</b>")+" | BMI <b>"+renal.bmi.toFixed(1)+"</b> | Destek <b>"+renal.rrt+"</b>";$("doseCards").innerHTML=ds.map(d=>'<div class="dose"><h4>'+d+"</h4>"+dose(d)+"</div>").join("")};blocks()})();
 </script>
+<script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("./service-worker.js").catch(()=>{}))}</script>
 </body></html>
-  <footer>
-  <p>
-    © 2026 Prof. Dr. Yalım Dikmen.
-    Licensed under GNU GPL v3.0.
-  </p>
-</footer>
