@@ -1,5 +1,5 @@
 {
-  "name": "YBÜ Antibiyotik Karar ve Doz Destek Sistemi v2.1",
+  "name": "YBÜ Antibiyotik Karar ve Doz Destek Sistemi v2.2",
   "short_name": "YBÜ Antibiyotik",
   "description": "Ampirik tedavi, renal doz, obezite ve CRRT karar desteği",
   "lang": "tr",
@@ -14,3 +14,4 @@
     {"src":"./icons/icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
   ]
 }
+
